@@ -1,0 +1,50 @@
+﻿@using SupplyMenuWeb.Models;
+@model SupplyDB
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css"/>
+    <title>办公室办公用品库存</title>
+</head>
+<body>
+    <div class="container"> 
+        <div class="col-lg-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>货品名称</th>
+                        <th>规格型号</th>
+                        <th>单位</th>
+                        <th>数量</th>
+                        <th>备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ 
+                        int i = 1;
+                    }
+                    @foreach (Supply su in Model.Supplies)
+                    {
+                        <tr>
+                            <th>@i</th>
+                            <th>@su.SupplyName</th>
+                            <th>@su.SupplyType</th>
+                            <th>@su.Dw</th>
+                            <th>@su.Count</th>
+                            <th>@su.Remarks</th>
+                        </tr>
+                        i++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
