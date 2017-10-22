@@ -29,6 +29,10 @@ namespace SupplyMenuWeb.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<Supply>()
+                .Property(e => e.Classify)
+                .IsFixedLength();
+
+            modelBuilder.Entity<Supply>()
                 .Property(e => e.Remarks)
                 .IsFixedLength();
         }

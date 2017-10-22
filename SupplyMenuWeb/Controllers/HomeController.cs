@@ -1,6 +1,8 @@
 ﻿using System.Web.Mvc;
 using SupplyMenuWeb.Models;
-
+using System.Data.Entity;
+using System.Linq;
+using System.Collections.Generic;
 namespace SupplyMenuWeb.Controllers
 {
     public class HomeController : Controller
@@ -8,8 +10,10 @@ namespace SupplyMenuWeb.Controllers
         // GET: Home
         public ViewResult Index()
         {
-            SupplyDB db = new SupplyDB();
-            return View("Index",db);
+            List<Supply> list_su = new SupplyDB().Supplies.ToList<Supply>();
+
+            var a = list_su.Where("");
+            return View("Index", a.ToList<Supply>());
         }
     }
 }

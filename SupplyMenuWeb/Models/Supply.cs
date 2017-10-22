@@ -24,6 +24,10 @@ namespace SupplyMenuWeb.Models
 
         public int Count { get; set; }
 
+        [Required]
+        [StringLength(10)]
+        public string Classify { get; set; }
+
         [StringLength(100)]
         public string Remarks { get; set; }
     }
