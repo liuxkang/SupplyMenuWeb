@@ -13,8 +13,6 @@ namespace SupplyMenuWeb.Controllers
             List<Supply> list_su = new SupplyDB().Supplies.ToList<Supply>();
 
             var result = from a in list_su
-                         where a.Classify.Trim() == "0101"
-                         where a.SupplyName.Contains("笔")
                          select a;
             return View("Index", result.ToList<Supply>());
         }
